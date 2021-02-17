@@ -1,13 +1,9 @@
-.title{
+.skill-share h1{
     font-family: 'Sacramento', cursive;
     color: #66BFBF;
-    font-size: 4.5rem;
-}
-
-.top-container p{
-	font-weight: 500;
-	text-align: justify;
-    width:1900px;
+    font-size: 7rem;
+    width:960px;
+    margin:0;
 }
 
 .top-container {
@@ -16,5 +12,46 @@
     background-color: #E4F9F5;
     margin-top:-50px;
     margin-left:10px;
-  }
+}
+
+.top-container p{
+	font-weight: 500;
+	text-align: justify;
+    width:786px;
+    font-size: 1.5rem;
+}
+
+#img-style{
+    height:315px;
+    width: 333px;
+    float:right;
+    margin-right:450px;
+}
+
+.middle-container{
+    position: relative;
+    padding-top: 100px;
+    background-color:#ffffff;
+    margin-top:-20px;
+    margin-left:10px;
+}
+
+.middle-container p{
+    font-weight: 500;
+	text-align: justify;
+    width:786px;
+    font-size: 1.5rem;
+    margin-top:-16px;
+}
+
+.middle-container h1{
+    margin-top:-100px;
+}
+
+.middle-container img{
+    float:right;
+    height:315px;
+    width: 333px;
+    margin-right:450px;
+}
 
