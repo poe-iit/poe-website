@@ -1,5 +1,20 @@
 .title{
     font-family: 'Sacramento', cursive;
     color: #66BFBF;
-    line-height: 2;
+    font-size: 4.5rem;
 }
+
+.top-container p{
+	font-weight: 500;
+	text-align: justify;
+    width:1900px;
+}
+
+.top-container {
+    position: relative;
+    padding-top: 100px;
+    background-color: #E4F9F5;
+    margin-top:-50px;
+    margin-left:10px;
+  }
+
