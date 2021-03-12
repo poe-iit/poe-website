@@ -1,0 +1,11 @@
+.style-fix img {
+    height: 150px;
+    width: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.style-fix p {
+    text-align: center;
+}
