@@ -12,6 +12,7 @@
 	>
 	<link rel="stylesheet" href="assets/css/styles.css"
 </head>
+<!-- the body has to reference the sidebar to enable scrollspy -->
 <body
 	class="position-relative bg-light"
 	data-bs-spy="scroll" 
@@ -36,10 +37,14 @@
 		</ul>
 	</div>
 </nav>
-<div class="row">
-	<nav class="col-md-2 d-none d-lg-block bg-light sticky-top sidebar h-100">
+<!-- use a grid, with a column for the sidebar, and one for main content -->
+<div class="row container-fluid">
+	<!-- the sidebar should stick to the screen once you scroll past it -->
+	<nav class="col-md-2 d-none d-md-block bg-light sticky-top h-100">
 		<nav class="sidebar flex-column bg-light h-100" id="toc">
+			<!-- the sidebar uses navs and anchors to enable scrollspy, or auto-updating as you scroll -->
 			<nav class="nav nav-pills sidebar-sticky flex-column position-relative overflow-auto">
+				<!-- each scrollspy anchor has to match the id of the header in the main content -->
 				<a class="nav-link" href="#software">Software</a>
 				<nav class="nav nav-pills flex-column" id="sw-collapse">
 					<a class="nav-link ms-3" href="#sw-general">General</a>
@@ -62,12 +67,14 @@
 			</nav>
 		</nav>
 	</nav>
-	<main class="col ml-sm-auto px-4 bg-body">
+	<!-- this main takes up one col but should expand to the rest of the screen -->
+	<main class="col bg-body">
 		<hr></hr>
 		<h1>Soteria Wiki/Documentation<h1>
 		<hr></hr>
 		<h2 id="software">Software</h2>
 			<h3 id="sw-general">General</h3>
+				<!-- this unorderd list will have all the topics relevant to the general software section -->
 				<ul>
 					<li>
 						<h3 class="h5">Git/GitHub setup</h3>
@@ -119,11 +126,81 @@
 						</ol>
 					</li>
 					<li>
-						Brush your teeth
 					</li>
 				</ul>
 			<h3 id="sw-website">Website</h3>
 			<h3 id="sw-core">Core Codebase</h3>
+				<ul>
+					<li>
+						<h3 class="h5">Setting up the Java Spring server to run locally</h3>
+					<ol>
+						<li>
+							Install Java JDK 1.11 or higher
+							<ul>
+								<li>
+									Windows/Mac Instructions
+									<ol>
+										<li>
+										You can get it from the 
+										<a href="https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html">
+										   Oracle Site</a>. 
+										
+										Make sure you get the 64-bit one for a 64-bit OS.
+										</li>
+										<li>
+											After installing, make sure Java is in your system's "PATH" environment variable.
+										</li>
+									</ol>
+								</li>
+								<li>
+									Linux (Ubuntu) Instructions
+									<ol>
+										<li>
+											At your terminal, enter “sudo apt install default-jre” in your terminal
+										</li>
+										<li>
+											At your terminal, enter “sudo apt install default-jdk” in your terminal
+										</li>
+										<li>
+											Make sure java is in your path by entering
+											“echo $JAVA_HOME” in your terminal and verifying the output.
+										</li>
+									</ol>
+								</li>
+							</ul>
+						</li>
+						<li>
+							Install any IDE. We use VSCode here.
+						</li>
+						<li>
+							Install VSCode extensions
+							<ul>
+								<li>
+									Spring Boot Extension Pack by Pivotal
+								</li>
+								<li>
+									Java Extension Pack by Microsoft
+								</li>
+								<li>
+									Maven (should come with Java) <br>
+									Enter “mvn -v” in your terminal to verify it is installed.
+								</li>
+							</ul>
+						</li>
+						<li>
+							Clone the server repository
+						</li>
+						<li>
+							Open the repository in your IDE
+						</li>
+						<li>
+							In VSCode, find the “Spring Boot Dashboard” on the bottom left to run the project. 
+							Alternatively, find the “Java Projects” tab on the bottom left of the screen,
+							and click "Run". 
+						</li>
+					</ol>
+					</li>
+				</ul>
 			<h3 id="sw-vr">Virtual Reality</h3>
 		<h2 id="cs">Cybersecurity</h2>
 		<h2 id="hw">Hardware</h2>
