@@ -1,37 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="utf-8">
 	<title>PAS: POE Alert System</title>
-	<link 
-		href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" 
-		rel="stylesheet" 
-		integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" 
-		crossorigin="anonymous"
-	>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/assets/css/index.css" />
+
 </head>
 
-<body class="bg-info">
-	<nav class="navbar navbar-expand-md navbar-dark bg-dark">
-		<div class="container-fluid">
+<body>
+
+	<!-- This is a nav bar -->
+	<nav class="navbar navbar-expand-md">
+		<div class="container-fluid navbar-container">
 			<a class="navbar-brand" href="index.html">
-				IPRO479-510: Power Over Ethernet
+				<img class="navbar-logo" src="/assets/images/navbarLogo.png" />
+				<span>Soteria</span>
 			</a>
 			<ul class="navbar-nav">
 				<li class="nav-item">
-					<a class="nav-link" href="demo.html">Demo</a>	
+					<a class="nav-link on-clicked" href="index.html">Home</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="people.html">People</a>	
+					<a class="nav-link" href="demo.html">Demo</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="wiki.html">Wiki</a>	
+					<a class="nav-link" href="people.html">People</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="wiki.html">Wiki</a>
+				</li>
+				<li class="nav-item">
+					<i class="fa fa-search search-icon"></i>
 				</li>
 			</ul>
 		</div>
 	</nav>
 
-	<main class="container">
+	<!-- slide-show -->
+
+	<div class="slide-show">
+		<!-- Slideshow container -->
+		<div class="slideshow-container">
+
+			<!-- Full-width images with number and caption text -->
+			<div class="mySlides fade">
+				<div class="numbertext">1 / 3</div>
+				<img src="/assets/images/Aleks.jpg" style="width:100%; height: 250px"> 
+				<div class="text">Caption Text</div>
+			</div>
+
+			<div class="mySlides fade">
+				<div class="numbertext">2 / 3</div>
+				<img src="/assets//images/avery.jpg" style="width:100%;height: 250px">
+				<div class="text">Caption Two</div>
+			</div>
+
+			<div class="mySlides fade">
+				<div class="numbertext">3 / 3</div>
+				<img src="/assets/images/circuit_board.png" style="width:100%;height: 250px">
+				<div class="text">Caption Three</div>
+			</div>
+
+			<!-- Next and previous buttons -->
+			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+			<a class="next" onclick="plusSlides(1)">&#10095;</a>
+		</div>
+		
+
+		<!-- The dots/circles -->
+		<div style="text-align:center">
+			<span class="dot" onclick="currentSlide(1)"></span>
+			<span class="dot" onclick="currentSlide(2)"></span>
+			<span class="dot" onclick="currentSlide(3)"></span>
+		</div>
+	</div>
+
+	<div class="why-soteria">
+		<h3 class="why-title">
+			Why?
+		</h3>
+		<p class="why-answer">
+			What is the problem and what we are developing
+		</p>
+
+	</div>
+
+	<div class="design-process">
+
+		<h3 class="design-process-title">
+			Design Process
+		</h3>
+
+		<div class="team-work">
+
+			<p>
+				What each team does
+			</p>
+
+			<img src="/assets/images/marketingPoster1.png" class="makerting-team-process" />
+
+
+		</div>
+	</div>
+
+	<!-- <main class="container">
 		<h1>PAS: Poe Alert System</h1>
 
 		<h2>The Problem</h2>
@@ -71,9 +147,9 @@
 			Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 			Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
 		</p>
-	</main>
+	</main> -->
 
-	<footer class="footer bg-dark text-white-50">
+	<!-- <footer class="footer bg-dark text-white-50">
 		<div class="container">
 			<a class="nav-link" href="https://www.facebook.com/Soteria-IIT-IPRO-101760275284320">
 				<img src="assets/images/Facebook-logo.png" alt="" style="height: 3%; width: 3%;">
@@ -83,13 +159,16 @@
 			</a>
 		</div>
 		
-	</footer>
+	</footer> -->
 
-	<script 
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" 
-		integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" 
-		crossorigin="anonymous"
-	>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+		</script>
+
+	,
+	<script src="assets/js/index.js">
+
 	</script>
 </body>
+
 </html>
