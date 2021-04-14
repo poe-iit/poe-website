@@ -1,3 +1,4 @@
+/*for people page*/
 .style-fix img {
     height: 150px;
     width: 150px;
@@ -6,7 +7,6 @@
     margin-right: auto;
     border-radius: 50%;
 }
-
 .style-fix p {
     text-align: center;
 }
@@ -17,15 +17,14 @@
 	--foreground: #4B5358;
 	--accent:     #27A5DF;
 	--darkaccent: #003459;
-	--light:      #C8CDD0;
+	--light:      #E9EBEC;
 	--dark:       #2D0605;
 }
 /* Main Stylings*/
-:root {
+html, body {
 	background-color: var(--background);
 	font-family: 'Noto Serif', serif;
 }
-
 h1, h2, h3, h4 {
 	font-family: 'Noto Sans KR', sans-serif;
 }
@@ -33,6 +32,7 @@ h1, h2, h3, h4 {
 
 /* Navbar Stylings */
 .navbar {
+	background-color: White;
 	font-family: 'Noto Sans KR', sans-serif;
 }
 .navbar-brand{
@@ -63,8 +63,11 @@ h1, h2, h3, h4 {
 .nav-link{    
 	color: var(--foreground);
 }
-.on-clicked{
-    background-color: var(--light);
+.nav-item:hover {
+	background-color: var(--light);
+}
+.nav-link:hover {
+	color: var(--dark);
 }
 .search-icon{
     margin-top: 12px;
