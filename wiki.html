@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>PAS: POE Alert System</title>
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link 
+		href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" 
+		rel="stylesheet" 
+		integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" 
+		crossorigin="anonymous"
+	>
+	<link rel="stylesheet" href="assets/css/styles.css"
+</head>
+<!-- the body has to reference the sidebar to enable scrollspy -->
+<body
+	class="position-relative bg-light"
+	data-bs-spy="scroll" 
+	data-bs-target="#toc"
+	data-bs-offset="0"
+>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+	<div class="container-fluid">
+		<a class="navbar-brand" href="index.html">
+			IPRO479-510: Power Over Ethernet
+		</a>
+		<ul class="navbar-nav">
+			<li class="nav-item">
+				<a class="nav-link" href="demo.html">Demo</a>	
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="people.html">People</a>	
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="wiki.html">Wiki</a>	
+			</li>
+		</ul>
+	</div>
+</nav>
+<!-- use a grid, with a column for the sidebar, and one for main content -->
+<div class="row container-fluid">
+	<!-- the sidebar should stick to the screen once you scroll past it -->
+	<nav class="col-md-2 d-none d-md-block bg-light sticky-top h-100">
+		<nav class="sidebar flex-column bg-light h-100" id="toc">
+			<!-- the sidebar uses navs and anchors to enable scrollspy, or auto-updating as you scroll -->
+			<nav class="nav nav-pills sidebar-sticky flex-column position-relative overflow-auto">
+				<!-- each scrollspy anchor has to match the id of the header in the main content -->
+				<a class="nav-link" href="#software">Software</a>
+				<nav class="nav nav-pills flex-column" id="sw-collapse">
+					<a class="nav-link ms-3" href="#sw-general">General</a>
+					<a class="nav-link ms-3" href="#sw-website">Website</a>
+					<a class="nav-link ms-3" href="#sw-core">Core Codebase</a>
+					<a class="nav-link ms-3" href="#sw-vr">Virtual Reality</a>
+				</nav>
+				<a class="nav-link" href="#cs">Cybersecurity</a>
+				<nav class="nav nav-pills flex-column">
+					<a class="nav-link ms-3" href="#cs-general">General</a>
+				</nav>
+				<a class="nav-link" href="#hw">Hardware</a>
+				<nav class="nav nav-pills flex-column">
+					<a class="nav-link ms-3" href="#hw-general">General</a>
+				</nav>
+				<a class="nav-link" href="#mk">Marketing</a>
+				<nav class="nav nav-pills flex-column">
+					<a class="nav-link ms-3" href="#mk-general">General</a>
+				</nav>
+			</nav>
+		</nav>
+	</nav>
+	<!-- this main takes up one col but should expand to the rest of the screen -->
+	<main class="col bg-body">
+		<hr></hr>
+		<h1>Soteria Wiki/Documentation<h1>
+		<hr></hr>
+		<h2 id="software">Software</h2>
+			<h3 id="sw-general">General</h3>
+				<!-- this unorderd list will have all the topics relevant to the general software section -->
+				<ul>
+					<li>
+						<h3 class="h5">Git/GitHub setup</h3>
+						Git is a version control program that runs “locally” on one's personal computer,
+						while GitHub is website that hosts repositories “remotely” on their servers.
+						Together, they can be used to share/modify/download code repositories.
+						Here is a quick guide to getting them set up on your system.
+						<ol>
+							<li>
+								Create an account on <a href="https://github.com/">GitHub</a>. 
+								This is the where repositories are hosted remotely.
+							</li>
+							<li>
+								Install Git
+								<ul>
+									<li>
+										Windows
+										<ol>
+											<li>
+												Install the Git Bash shell
+											</li>
+											<li>
+												Git should now be in your system. 
+												Check by running “git --version” in Bash or Powershell
+											</li>
+											<li>
+												If using WSL, see the Linux instructions
+											</li>
+										</ol>
+									</li>
+									<li>
+										Linux
+										<ol>
+											<li>
+												Run “sudo apt install git” from your terminal
+											</li>
+										</ol>
+									</li>
+
+								</ul>
+							</li>
+								At your terminal, enter “git config --global user.name NAME”
+								with your name for NAME
+							<li>
+								At your terminal, enter “git config --global user.email EMAIL”
+								With your email for EMAIL
+								(Use the same email you used for GitHub)
+							</li>
+						</ol>
+					</li>
+					<li>
+					</li>
+				</ul>
+			<h3 id="sw-website">Website</h3>
+			<h3 id="sw-core">Core Codebase</h3>
+				<ul>
+					<li>
+						<h3 class="h5">Setting up the Java Spring server to run locally</h3>
+					<ol>
+						<li>
+							Install Java JDK 1.11 or higher
+							<ul>
+								<li>
+									Windows/Mac Instructions
+									<ol>
+										<li>
+										You can get it from the 
+										<a href="https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html">
+										   Oracle Site</a>. 
+										
+										Make sure you get the 64-bit one for a 64-bit OS.
+										</li>
+										<li>
+											After installing, make sure Java is in your system's "PATH" environment variable.
+										</li>
+									</ol>
+								</li>
+								<li>
+									Linux (Ubuntu) Instructions
+									<ol>
+										<li>
+											At your terminal, enter “sudo apt install default-jre” in your terminal
+										</li>
+										<li>
+											At your terminal, enter “sudo apt install default-jdk” in your terminal
+										</li>
+										<li>
+											Make sure java is in your path by entering
+											“echo $JAVA_HOME” in your terminal and verifying the output.
+										</li>
+									</ol>
+								</li>
+							</ul>
+						</li>
+						<li>
+							Install any IDE. We use VSCode here.
+						</li>
+						<li>
+							Install VSCode extensions
+							<ul>
+								<li>
+									Spring Boot Extension Pack by Pivotal
+								</li>
+								<li>
+									Java Extension Pack by Microsoft
+								</li>
+								<li>
+									Maven (should come with Java) <br>
+									Enter “mvn -v” in your terminal to verify it is installed.
+								</li>
+							</ul>
+						</li>
+						<li>
+							Clone the server repository
+						</li>
+						<li>
+							Open the repository in your IDE
+						</li>
+						<li>
+							In VSCode, find the “Spring Boot Dashboard” on the bottom left to run the project. 
+							Alternatively, find the “Java Projects” tab on the bottom left of the screen,
+							and click "Run". 
+						</li>
+					</ol>
+					</li>
+				</ul>
+			<h3 id="sw-vr">Virtual Reality</h3>
+		<h2 id="cs">Cybersecurity</h2>
+		<h2 id="hw">Hardware</h2>
+		<h2 id="mk">Marketing</h2>
+	</main>
+</div>
+<script 
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" 
+	integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" 
+	crossorigin="anonymous">
+</script>
+</body>
