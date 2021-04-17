@@ -21,6 +21,7 @@ h1, h2, h3, h4 {
 .main-nav {
 	background-color: White;
 	font-family: 'Noto Sans KR', sans-serif;
+	padding: 0;
 }
 .main-nav .navbar-brand {
     padding: 0;
@@ -61,11 +62,6 @@ h1, h2, h3, h4 {
 #navbar-line {
     margin: 0px;
 	padding: 0px;
-	color: var(--foreground);
-}
-
-
-=======
-body {
-    background-color: #FDFFF7;
+	border: 1px solid;
+	color: var(--light);
 }
