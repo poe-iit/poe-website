@@ -30,10 +30,11 @@ h1, h2, h3, h4 {
     padding: 0;
 }
 .main-nav .navbar-logo {
-	width: 50px;
+	width: 60px;
 }
 .main-nav .navbar-brand span {
     color: var(--foreground);
+	font-size: 32px;
     font-weight: bold;
 }
 .main-nav .navbar-nav {
@@ -61,4 +62,10 @@ h1, h2, h3, h4 {
 	padding: 0px;
 	border: 1px solid;
 	color: var(--light);
+}
+
+/*footer */
+footer {
+	color: var(--light);
+	background-color: var(--foreground);
 }
