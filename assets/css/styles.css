@@ -30,14 +30,11 @@ h1, h2, h3, h4 {
     padding: 0;
 }
 .main-nav .navbar-logo {
-	width: 2em;
+	width: 50px;
 }
 .main-nav .navbar-brand span {
     color: var(--foreground);
     font-weight: bold;
-    position: absolute;
-    margin-top: 5px;
-    margin-left: 3px;
 }
 .main-nav .navbar-nav {
     display: flex;
