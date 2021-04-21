@@ -1,3 +1,71 @@
+/* Main Colors to be used throughout the website */
+:root {
+	--background: #FDFFF7; 
+	--foreground: #4B5358;
+	--accent:     #27A5DF;
+	--darkaccent: #003459;
+	--light:      #E9EBEC;
+	--dark:       #2D0605;
+}
+/* Main Stylings*/
 body {
-    background-color: #FDFFF7;
+	background-color: var(--background);
+	font-family: 'Noto Serif', serif;
+}
+h1, h2, h3, h4 {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+
+/* Navbar Stylings */
+.main-nav {
+	background-color: White;
+	font-family: 'Noto Sans KR', sans-serif;
+	padding: 0;
+}
+.main-nav .navbar-brand {
+    padding: 0;
+}
+.main-nav .navbar {
+    padding: 0;
+}
+.main-nav .navbar-logo {
+	width: 60px;
+}
+.main-nav .navbar-brand span {
+    color: var(--foreground);
+	font-size: 32px;
+    font-weight: bold;
+}
+.main-nav .navbar-nav {
+    display: flex;
+    justify-content: center;
+}
+.main-nav .nav-item {
+	width: 100%;
+	height: 100%;
+    text-align: center;
+}
+.main-nav .nav-link {    
+	font-family: 'Noto Sans KR', sans-serif;
+	color: var(--foreground);
+}
+.main-nav .nav-item:hover {
+	background-color: var(--light);
+}
+.main-nav .nav-link:hover {
+	color: var(--dark);
+}
+/*horizontal rule under navbar*/
+#navbar-line {
+    margin: 0px;
+	padding: 0px;
+	border: 1px solid;
+	color: var(--light);
+}
+
+/*footer */
+footer {
+	color: var(--light);
+	background-color: var(--foreground);
 }
