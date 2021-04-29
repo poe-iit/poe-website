@@ -2,235 +2,477 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>PAS: POE Alert System</title>
-	 <meta name="viewport" content="width=device-width, initial-scale=1">
-	<link 
-		href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" 
-		rel="stylesheet" 
-		integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" 
-		crossorigin="anonymous"
-	>
+
+    <!-- stylesheets -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 	<link rel="stylesheet" href="assets/css/styles.css">
 	<link rel="stylesheet" href="assets/css/wiki.css">
 </head>
 <!-- the body has to reference the sidebar to enable scrollspy -->
-<body
-	class="position-relative"
-	data-bs-spy="scroll" 
-	data-bs-target="#toc"
-	data-bs-offset="0"
->
+<body class="position-relative" data-bs-spy="scroll" data-bs-target="#toc" data-bs-offset="0">
 <nav class="main-nav navbar navbar-expand-md">
-	<div class="container-fluid">
-		<a class="navbar-brand" href="index.html">
-			<img class="navbar-logo" src="assets/images/navbarLogo.png" />
-			<span>Soteria</span>
-		</a>
-		<ul class="navbar-nav">
-			<li class="nav-item">
-				<a class="nav-link" href="index.html">Home</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="demo.html">Demo</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="people.html">People</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="wiki.html">Wiki</a>
-			</li>
-		</ul>
-	</div>
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+            <img class="navbar-logo" src="assets/images/navbarLogo.png" />
+            <span>Soteria</span>
+        </a>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="demo.html">Demo</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="people.html">People</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="wiki.html">Wiki</a>
+            </li>
+        </ul>
+    </div>
 </nav>
-<div id="navbar-line"></div>
 
 <!-- use a grid, with a column for the sidebar, and one for main content -->
-<div class="">
-	<div class="row ">
-		<!-- the sidebar should stick to the screen once you scroll past it -->
-		<div id="toc" class="col-lg-2 d-none d-md-block h-inherit">
-		<!--<nav class="col-md-2 d-none d-md-block sticky-top">-->
-		<nav class="sticky-top">
-			<nav class="sidebar flex-column h-100" id="toc">
-				<!-- the sidebar uses navs and anchors to enable scrollspy, or auto-updating as you scroll -->
-				<nav class="nav nav-pills sidebar-sticky flex-column position-relative overflow-auto">
-					<!-- each scrollspy anchor has to match the id of the header in the main content -->
-					<a class="nav-link" href="#software">Software</a>
-					<nav class="nav nav-pills flex-column" id="sw-collapse">
-						<a class="nav-link ms-3" href="#sw-general">General</a>
-						<a class="nav-link ms-3" href="#sw-website">Website</a>
-						<a class="nav-link ms-3" href="#sw-core">Core Codebase</a>
-						<a class="nav-link ms-3" href="#sw-vr">Virtual Reality</a>
-					</nav>
-					<a class="nav-link" href="#cs">Cybersecurity</a>
-					<nav class="nav nav-pills flex-column">
-						<a class="nav-link ms-3" href="#cs-general">General</a>
-					</nav>
-					<a class="nav-link" href="#hw">Hardware</a>
-					<nav class="nav nav-pills flex-column">
-						<a class="nav-link ms-3" href="#hw-general">General</a>
-					</nav>
-					<a class="nav-link" href="#mk">Marketing</a>
-					<nav class="nav nav-pills flex-column">
-						<a class="nav-link ms-3" href="#mk-general">General</a>
-					</nav>
-				</nav>
-			</nav>
-		</nav>
-		</div>
-		<!-- this main takes up one col but should expand to the rest of the screen -->
-		<main class="col">
-			<br>
-			<h1>Soteria Wiki/Documentation<h1>
-			<hr></hr>
-			<h2 id="software">Software</h2>
-				<h3 id="sw-general">General</h3>
-					<!-- this unorderd list will have all the topics relevant to the general software section -->
-					<ul>
-						<li>
-							<h3 class="h5">Git/GitHub setup</h3>
-							Git is a version control program that runs “locally” on one's personal computer,
-							while GitHub is website that hosts repositories “remotely” on their servers.
-							Together, they can be used to share/modify/download code repositories.
-							Here is a quick guide to getting them set up on your system.
-							<ol>
-								<li>
-									Create an account on <a href="https://github.com/">GitHub</a>. 
-									This is the where repositories are hosted remotely.
-								</li>
-								<li>
-									Install Git
-									<ul>
-										<li>
-											Windows
-											<ol>
-												<li>
-													Install the Git Bash shell
-												</li>
-												<li>
-													Git should now be in your system. 
-													Check by running “git --version” in Bash or Powershell
-												</li>
-												<li>
-													If using WSL, see the Linux instructions
-												</li>
-											</ol>
-										</li>
-										<li>
-											Linux
-											<ol>
-												<li>
-													Run “sudo apt install git” from your terminal
-												</li>
-											</ol>
-										</li>
+<div class="row">
+    <!-- the sidebar should stick to the screen once you scroll past it -->
+    <section id="toc" class="col-lg-2 d-none d-md-block h-inherit">
+        <nav class="sticky-top">
+            <nav class="sidebar flex-column h-100" id="toc">
+                <!-- the sidebar uses navs and anchors to enable scrollspy, or auto-updating as you scroll -->
+                <nav class="nav nav-pills sidebar-sticky flex-column position-relative overflow-auto">
+                    <!-- each scrollspy anchor has to match the id of the header in the main content -->
+                    <a class="nav-link" href="#software">Software</a>
+                    <nav class="nav nav-pills flex-column" id="sw-collapse">
+                        <a class="nav-link ms-3" href="#sw-overview">Overview</a>
+                        <a class="nav-link ms-3" href="#sw-website">Website</a>
+                        <a class="nav-link ms-3" href="#sw-core">Core Codebase</a>
+                        <a class="nav-link ms-3" href="#sw-vr">Virtual Reality</a>
+                    </nav>
+                    <a class="nav-link" href="#cybersecurity">Cybersecurity</a>
+                    <nav class="nav nav-pills flex-column">
+                        <a class="nav-link ms-3" href="#cs-general">General</a>
+                    </nav>
+                    <a class="nav-link" href="#hardware">Hardware</a>
+                    <nav class="nav nav-pills flex-column">
+                        <a class="nav-link ms-3" href="#hw-general">General</a>
+                    </nav>
+                    <a class="nav-link" href="#marketing">Marketing</a>
+                    <nav class="nav nav-pills flex-column">
+                        <a class="nav-link ms-3" href="#mk-general">General</a>
+                    </nav>
+                </nav>
+            </nav>
+        </nav>
+    </section>
+    <!-- this main takes up one col but should expand to the rest of the screen -->
+    <main class="col">
+        <h1>Soteria Documentation<h1>
+        <hr></hr>
+        <section id="software">
+            <h2 id="sw-heading">Software</h2>
 
-									</ul>
-								</li>
-									At your terminal, enter “git config --global user.name NAME”
-									with your name for NAME
-								<li>
-									At your terminal, enter “git config --global user.email EMAIL”
-									With your email for EMAIL
-									(Use the same email you used for GitHub)
-								</li>
-							</ol>
-						</li>
-						<li>
-						</li>
-					</ul>
-				<h3 id="sw-website">Website</h3>
-				<h3 id="sw-core">Core Codebase</h3>
-					<ul>
-						<li>
-							<h3 class="h5">Setting up the Java Spring server to run locally</h3>
-						<ol>
-							<li>
-								Install Java JDK 1.11 or higher
-								<ul>
-									<li>
-										Windows/Mac Instructions
-										<ol>
-											<li>
-											You can get it from the 
-											<a href="https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html">
-											   Oracle Site</a>. 
-											
-											Make sure you get the 64-bit one for a 64-bit OS.
-											</li>
-											<li>
-												After installing, make sure Java is in your system's "PATH" environment variable.
-											</li>
-										</ol>
-									</li>
-									<li>
-										Linux (Ubuntu) Instructions
-										<ol>
-											<li>
-												At your terminal, enter “sudo apt install default-jre” in your terminal
-											</li>
-											<li>
-												At your terminal, enter “sudo apt install default-jdk” in your terminal
-											</li>
-											<li>
-												Make sure java is in your path by entering
-												“echo $JAVA_HOME” in your terminal and verifying the output.
-											</li>
-										</ol>
-									</li>
-								</ul>
-							</li>
-							<li>
-								Install any IDE. We use VSCode here.
-							</li>
-							<li>
-								Install VSCode extensions
-								<ul>
-									<li>
-										Spring Boot Extension Pack by Pivotal
-									</li>
-									<li>
-										Java Extension Pack by Microsoft
-									</li>
-									<li>
-										Maven (should come with Java) <br>
-										Enter “mvn -v” in your terminal to verify it is installed.
-									</li>
-								</ul>
-							</li>
-							<li>
-								Clone the server repository
-							</li>
-							<li>
-								Open the repository in your IDE
-							</li>
-							<li>
-								In VSCode, find the “Spring Boot Dashboard” on the bottom left to run the project. 
-								Alternatively, find the “Java Projects” tab on the bottom left of the screen,
-								and click "Run". 
-							</li>
-						</ol>
-						</li>
-					</ul>
-				<h3 id="sw-vr">Virtual Reality</h3>
-			<h2 id="cs">Cybersecurity</h2>
-			<h2 id="hw">Hardware</h2>
-			<h2 id="mk">Marketing</h2>
-		</main>
-	</div>
+            <section id="sw-overview">
+                <h3>Overview</h3>
+                <p>
+                    Soteria consists of three major components:
+                    <ol>
+                        <li>the <strong>project website</strong></li>
+                        <li>the <strong>sensor network</strong></li>
+                        <li>the <strong>virtual reality demo</strong></li>
+                    </ol>
+                </p>
+                <p>
+                    The sensor network is written in Rust, and can be located
+                    in the <a href="https://github.com/poe-iit/poe-core">poe-core</a>
+                    repository. It handles the communication of nodes with
+                    each other, over TCP.
+                </p>
+                <p>
+                    The project website is what you are currently viewing. It
+                    serves multiple purposes: a way to promote and desrcibe
+                    Soteria and as a primary repository for project documentation.
+                    The source code can be located in the
+                    <a href="https://github.com/poe-iit/poe-website">poe-website</a>
+                    repository.
+                    <br>
+                    <strong>
+                        <em>
+                            Please update it frequently, or at least at the
+                            end of every semester.
+                        </em>
+                    </strong>
+                </p>
+                <p>
+                    The virtual reality demo is exactly that, a demo written
+                    in <a href="https://unity.com/">Unity</a>. The source
+                    code is located in the
+                    <a href="https://github.com/poe-iit/poe-website">poe-vr</a>
+                    repository.
+                </p>
+                <p>
+                    Since all projects use <a href="https://git-scm.com/">Git</a>
+                    for version control, we describe below how to best set
+                    that up for all IPRO members.
+                </p>
+
+                <section id="sw-git">
+                    <h4>Git Setup</h4>
+                    <p>
+                        <a href="https://git-scm.com/">Git</a> is a version
+                        control system that runs "locally"
+                        on one's personal computer. GitHub is website
+                        that hosts repositories "remotely" on their servers.
+                        <br>
+                        Together, they can be used to share/modify/download
+                        code repositories in a way that facilitates collaboration.
+                        There are many resources available for learning Git
+                        for any new members, such as
+                        <a href="https://git-scm.com/book/en/v2">ProGit</a>.
+                    </p>
+                    <ul>
+                        <!-- for managing poe organization -->
+                        <li id="sw-git-admin">
+                            <h5>Organization Access (POE GitHub Admin only)</h5>
+                            <p>
+                                Each of the aforementioned repositories already give
+                                write access to the <strong>software team</strong>.
+                                All you have to do is add your current semester's
+                                members to that team and they should have access.
+                            </p>
+                            <p>
+                                Convert any past students from <strong>Members</strong>
+                                to <strong>Outside Collaborators</strong>. Once complete,
+                                safely remove them from the Software Team mentioned below.
+                                <ol>
+                                    <li>Navigate to the
+                                        <a href="https://github.com/poe-iit">Organization</a>
+                                    </li>
+                                    <li>Click on <strong>People</strong></li>
+                                    <li>Select all past semester IPRO members</li>
+                                    <li>Click <strong>Convert to outside collaborator</strong></li>
+                                </ol>
+                            </p>
+                            <p>
+                                To add/remove members:
+                                <ol>
+                                    <li>Navigate to the
+                                        <a href="https://github.com/poe-iit">Organization</a>
+                                    </li>
+                                    <li>Click on <strong>Teams</strong></li>
+                                    <li>Click on <strong>Software</strong></li>
+                                    <li>On the left, click on the <strong>+</strong></li>
+                                    <li>Add any member(s) using their GitHub account</li>
+                                    <li>Remove past members from this team</li>
+                                </ol>
+                            </p>
+                            <p>
+                                At this point, the current semester IPRO members ready
+                                to set up Git/GitHub.
+                            </p>
+                        </li>
+                        <!-- for members new to Git -->
+                        <li>
+                            <h3 class="h5">Git/GitHub Setup</h3>
+                            <p>
+                                Here is a quick guide to getting any or all
+                                repositories set up on your system.
+                            </p>
+                            <ol>
+                                <li> Create a <a href="https://github.com/">GitHub</a> account.</li>
+                                <li>
+                                    Install Git on your local machine
+                                    <ul>
+                                        <li>
+                                            Windows
+                                            <ol>
+                                                <li> Install the Git Bash shell</li>
+                                                <li>
+                                                    Git should now be in your system.
+                                                    Check by running <code>git --version</code> in Bash or Powershell.
+                                                </li>
+                                                <li>
+                                                    If using <a href="https://docs.microsoft.com/en-us/windows/wsl/">WSL</a> (recommended),
+                                                    see the Linux instructions below.
+                                                </li>
+                                            </ol>
+                                        </li>
+                                        <li>
+                                            Linux/WSL
+                                            <ul>
+                                                <li><code>$ sudo apt install git</code></li>
+                                            </ul>
+                                        </li>
+
+                                    </ul>
+                                </li>
+                                <li>Set user name and email
+                                    <ul>
+                                        <li><code>$ git config --global user.name YOUR_NAME</code></li>
+                                        <li><code>$ git config --global user.name YOUR_GITHUB_EMAIL</code></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    Add an SSH key
+                                    <ol>
+                                        <li>
+                                            Generate an SSH key:<br>
+                                            <code>$ ssh-keygen</code>
+                                        </li>
+                                        <li>
+                                            Print public key to terminal and <strong>copy</strong>:<br>
+                                            <code>$ cat ~/.ssh/id_rsa.pub</code>
+                                            <br>
+                                            Should look like: <code>ssh-rsa AAAAB3NzaC1y...</code>
+                                        </li>
+                                        <li>
+                                            Add it to GitHub
+                                            <ol>
+                                                <li>
+                                                    Go to <a href="https://github.com/">GitHub</a>
+                                                    > <strong>Settings</strong>
+                                                    > <strong>SSH and GPG keys</strong>
+                                                </li>
+                                                <li>Click on <strong>New SSH key</strong></li>
+                                                <li><strong>Title</strong> can be anything (descriptive of your machine is best), paste key into <strong>Key</strong> section</li>
+                                            </ol>
+                                        </li>
+                                    </ol>
+                                </li>
+                                <li>
+                                    Clone a repository
+                                    <ol>
+                                        <li>Click the green <strong>Code</strong> dropdown</li>
+                                        <li>(if you followed the SSH Key step) Click on <strong>SSH</strong></li>
+                                        <li>Copy by clicking the clipboard icon</li>
+                                        <li><code>$ git clone LINK_YOU_COPIED_HERE</code></li>
+                                    </ol>
+                                </li>
+                            </ol>
+
+                            <p>
+                                You should now have access to any of the GitHub
+                                repositories and have local copies on your
+                                personal machine. You are ready to work!
+                            </p>
+                            <p>
+                                See the below sections for more information on
+                                each project, such as the current state and
+                                future goals you can work on.
+                            </p>
+                        </li>
+                    </ul>
+                </section>
+            </section>
+
+            <section id="sw-website">
+                <h3>Website</h3>
+                <p>
+                    The <a href="/">Soteria website</a> has three primary pages
+                    <ol>
+                        <li>the <strong><a href="/index.html">Home</a></strong> page</li>
+                        <li>the <strong><a href="/people.html">People</a></strong> page</li>
+                        <li>the <strong><a href="/demo.html">Demo</a></strong> page</li>
+                        <li>the <strong><a href="/wiki.html">Wiki</a></strong> page</li>
+                    </ol>
+                </p>
+                <p>
+                    The <strong>Home</strong> page is where we present the
+                    Problem statement and introduce Soteria.
+                    This page is largely static as the goals
+                    of the project remain unchanged. Work with the Marketing team
+                    (if there is one) so that a consistent design/theme is kept
+                    and the information listed is correct.
+                </p>
+                <p>
+                    The <strong>People</strong> page is where past and present
+                    members receive credit where it is due. There should be a catch-all
+                    <strong>Past Contributors</strong> section for non-current
+                    IPRO members. The current members should be listed under
+                    their appropriate subteams above. This project has passed
+                    many hands, and even you will end up on the list of contributors
+                    who made Soteria possible.
+
+                </p>
+                <p>
+                    At the start of the semester, you should move the previous
+                    semester's members down to the <strong>Past Contributors</strong>
+                    section, and add yourselves.
+                </p>
+                <p>
+                    The <strong>Demo</strong> page is where the virtual reality
+                    subteam gets to showcase their hard work. The VR demo is a
+                    proof of concept that will allow new people to understand
+                    what Soteria will be capable of.
+                </p>
+                <p>
+                    The <strong>Wiki</strong> page is ideally the culmination of
+                    all project documentation. At the time of this website's inception,
+                    the project documents lie in a Google Drive which can be unwieldy.
+                    Though it takes some effort to add information and figures here,
+                    it is worth it for easier access. Anybody reading this is
+                    already gaining from it by reading the above steps to set up
+                    development workflows.
+                </p>
+                <p>
+                    Since the website is largely static, we do not use a backend
+                    such as PHP or Node/Express.js. We do use
+                    <a href="https://getbootstrap.com/">Bootstrap v5.0</a> and
+                    its associated classes and JavaScript. There are four HTML
+                    files: <code>index.html</code>, <code>people.html</code>,
+                    <code>demo.html</code>, and <code>wiki.html</code>. These
+                    have their respective CSS files, while site-wide styling is
+                    located in <code>styles.css</code>.
+                </p>
+                <p>
+                    You are allowed to make any changes you want, Soteria is in
+                    your hands after all. But we urge you to collaborate with
+                    each other and keep future students in mind. As long as you
+                    stay consistent with details that span the entire site
+                    (color scheme, fonts, layout, etc.,), then the website will
+                    only improve.
+                </p>
+            </section>
+
+            <section id="sw-core">
+                <h3>Core Codebase</h3>
+                <p>
+                    The core codebase refers to the software portion of the actual
+                    network of sensors that make up Soteria. Put simply, Soteria
+                    consists of sensors/nodes scattered throughout a building.
+                    These nodes communicate with each other in case of an emergency,
+                    and will intelligently route building inhabitants to safety.
+                </p>
+                <p>
+                    You can conceptually divide this core code base into three
+                    components:
+                    <ol>
+                        <li>
+                            the front-end user interface
+                            (<a href="https://github.com/poe-iit/poe-crust">poe-crust</a>)
+                        </li>
+                        <li>
+                            the back-end web server
+                            (<a href="https://github.com/poe-iit/poe-mantle">poe-mantle</a>)
+                        </li>
+                        <li>
+                            the underlying node network
+                            (<a href="https://github.com/poe-iit/poe-core">poe-core</a>)
+                        </li>
+                    </ol>
+                </p>
+                <p>
+                    Below is an architecture diagram to help visualize this:
+                </p>
+                <img class="diagram" src="assets/images/diagrams/poe-architecture.png" alt="poe architecture diagram">
+
+                <p>
+                    You will want to clone all three repositories (see Git instructions)
+                    above
+                </p>
+
+                <ul>
+                    <li>
+                        <h3 class="h5">Setting up the Java Spring server to run locally</h3>
+                    <ol>
+                        <li>
+                            Install Java JDK 1.11 or higher
+                            <ul>
+                                <li>
+                                    Windows/Mac Instructions
+                                    <ol>
+                                        <li>
+                                        You can get it from the
+                                        <a href="https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html">
+                                            Oracle Site</a>.
+
+                                        Make sure you get the 64-bit one for a 64-bit OS.
+                                        </li>
+                                        <li>
+                                            After installing, make sure Java is in your system's "PATH" environment variable.
+                                        </li>
+                                    </ol>
+                                </li>
+                                <li>
+                                    Linux (Ubuntu) Instructions
+                                    <ol>
+                                        <li>
+                                            At your terminal, enter “sudo apt install default-jre” in your terminal
+                                        </li>
+                                        <li>
+                                            At your terminal, enter “sudo apt install default-jdk” in your terminal
+                                        </li>
+                                        <li>
+                                            Make sure java is in your path by entering
+                                            “echo $JAVA_HOME” in your terminal and verifying the output.
+                                        </li>
+                                    </ol>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            Install any IDE. We use VSCode here.
+                        </li>
+                        <li>
+                            Install VSCode extensions
+                            <ul>
+                                <li>
+                                    Spring Boot Extension Pack by Pivotal
+                                </li>
+                                <li>
+                                    Java Extension Pack by Microsoft
+                                </li>
+                                <li>
+                                    Maven (should come with Java) <br>
+                                    Enter “mvn -v” in your terminal to verify it is installed.
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            Clone the server repository
+                        </li>
+                        <li>
+                            Open the repository in your IDE
+                        </li>
+                        <li>
+                            In VSCode, find the “Spring Boot Dashboard” on the bottom left to run the project.
+                            Alternatively, find the “Java Projects” tab on the bottom left of the screen,
+                            and click "Run".
+                        </li>
+                    </ol>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="sw-vr">
+                <h3>Virtual Reality</h3>
+            </section>
+
+        </section>
+
+        <section id="hardware">
+            <h2 id="hw-heading">Hardware</h2>
+        </section>
+
+        <section id="cybersecurity">
+            <h2 id="cs-heading">Cybersecurity</h2>
+        </section>
+
+        <section id="marketing">
+            <h2 id="mk-heading">Marketing</h2>
+        </section>
+    </main>
 </div>
 
 <footer class="container-fluid py-3">
-	<div class="container">
-		Soteria 2021 <br>
-		IPRO 479-510 <br>
-		Illinois Institute of Technology
-	</div>
+    <div class="container">
+        Soteria 2021 <br>
+        IPRO 479-510 <br>
+        Illinois Institute of Technology
+    </div>
 </footer>
 
-<script 
-	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" 
-	integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" 
-	crossorigin="anonymous">
-</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 </body>

@@ -1,6 +1,6 @@
 /* Main Colors to be used throughout the website */
 :root {
-	--background: #FDFFF7; 
+	--background: #FDFFF7;
 	--foreground: #4B5358;
 	--accent:     #27A5DF;
 	--darkaccent: #003459;
@@ -16,12 +16,14 @@ h1, h2, h3, h4 {
 	font-family: 'Noto Sans KR', sans-serif;
 }
 
-
 /* Navbar Stylings */
 .main-nav {
 	background-color: White;
 	font-family: 'Noto Sans KR', sans-serif;
 	padding: 0;
+    /* add bottom border to navbar */
+    border-bottom: 2px solid;
+    border-color: var(--light);
 }
 .main-nav .navbar-brand {
     padding: 0;
@@ -46,26 +48,23 @@ h1, h2, h3, h4 {
 	height: 100%;
     text-align: center;
 }
-.main-nav .nav-link {    
-	font-family: 'Noto Sans KR', sans-serif;
-	color: var(--foreground);
-}
 .main-nav .nav-item:hover {
 	background-color: var(--light);
+}
+.main-nav .nav-link {
+	font-family: 'Noto Sans KR', sans-serif;
+	color: var(--foreground);
 }
 .main-nav .nav-link:hover {
 	color: var(--dark);
 }
-/*horizontal rule under navbar*/
-#navbar-line {
-    margin: 0px;
-	padding: 0px;
-	border: 1px solid;
-	color: var(--light);
-}
 
-/*footer */
+/* footer */
 footer {
 	color: var(--light);
 	background-color: var(--foreground);
+}
+
+a, p, li {
+    font-size: 1.0rem;
 }

@@ -14,3 +14,7 @@ main {
 	color: var(--foreground);
 }
 
+.diagram {
+    width: 600px;
+    height: auto;
+}
