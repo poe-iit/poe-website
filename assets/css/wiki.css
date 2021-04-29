@@ -1,0 +1,16 @@
+#toc {
+	font-family: 'Noto Sans KR', sans-serif;
+	background-color: var(--light);
+}
+#toc a {
+	text-decoration: none;
+	color: var(--foreground);
+}
+#toc .active {
+	color: var(--background);
+	background-color: var(--accent);
+}
+main {
+	color: var(--foreground);
+}
+
