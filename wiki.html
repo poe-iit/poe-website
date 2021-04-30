@@ -337,113 +337,320 @@
             </section>
 
             <section id="sw-core">
-                <h3>Core Codebase</h3>
-                <p>
-                    The core codebase refers to the software portion of the actual
-                    network of sensors that make up Soteria. Put simply, Soteria
-                    consists of sensors/nodes scattered throughout a building.
-                    These nodes communicate with each other in case of an emergency,
-                    and will intelligently route building inhabitants to safety.
-                </p>
-                <p>
-                    You can conceptually divide this core code base into three
-                    components:
-                    <ol>
-                        <li>
-                            the front-end user interface
-                            (<a href="https://github.com/poe-iit/poe-crust">poe-crust</a>)
-                        </li>
-                        <li>
-                            the back-end web server
-                            (<a href="https://github.com/poe-iit/poe-mantle">poe-mantle</a>)
-                        </li>
-                        <li>
-                            the underlying node network
-                            (<a href="https://github.com/poe-iit/poe-core">poe-core</a>)
-                        </li>
-                    </ol>
-                </p>
-                <p>
-                    Below is an architecture diagram to help visualize this:
-                </p>
-                <img class="diagram" src="assets/images/diagrams/poe-architecture.png" alt="poe architecture diagram">
+                <section id="sw-core-overview">
+                    <h3>Core Codebase</h3>
+                    <p>
+                        The core codebase refers to the software portion of the actual
+                        network of sensors that make up Soteria. Put simply, Soteria
+                        consists of sensors/nodes scattered throughout a building.
+                        These nodes communicate with each other in case of an emergency,
+                        and will intelligently route building inhabitants to safety.
+                    </p>
+                    <p>
+                        You can conceptually divide this core code base into three
+                        components:
+                        <ol>
+                            <li>
+                                the front-end user interface
+                                (<a href="https://github.com/poe-iit/poe-crust">poe-crust</a>)
+                            </li>
+                            <li>
+                                the back-end web server
+                                (<a href="https://github.com/poe-iit/poe-mantle">poe-mantle</a>)
+                            </li>
+                            <li>
+                                the underlying node network
+                                (<a href="https://github.com/poe-iit/poe-core">poe-core</a>)
+                            </li>
+                        </ol>
+                    </p>
+                    <p>
+                        Below is an architecture diagram to help visualize this:
+                    </p>
+                    <img class="diagram" src="assets/images/diagrams/poe-architecture.png" alt="poe architecture diagram">
 
-                <p>
-                    You will want to clone all three repositories (see Git instructions)
-                    above
-                </p>
+                    <p>
+                        You will want to clone all three repositories (see Git
+                        instructions on cloning above). Below we cover each project
+                        in-depth, and the best workspace setup.
+                    </p>
+                </section>
 
-                <ul>
-                    <li>
-                        <h3 class="h5">Setting up the Java Spring server to run locally</h3>
-                    <ol>
+                <section id="sw-core-crust">
+                    <h4>Front-end User Interface (Crust)</h4>
+                    <p>
+                        This is the front-facing part of Soteria, where the
+                        designated administrator for a building will be able to
+                        monitor the node network and make changes if necessary.
+                    </p>
+                    <p>
+                        The application is a web app, meant to run in a preferred
+                        web browser. This was made for ease of portability, rather
+                        than write a command line interface (CLI) or for a specific
+                        operating system. Currently in development, crust has not
+                        been deployed as of yet, but can soon be there. Here is
+                        a screenshot of the current UI layout.
+                    </p>
+                    <img class="diagram" src="assets/images/diagrams/poe-crust-layout.JPG" alt="poe crust ui layout">
+                    <p>
+                        We now discuss the tech stack, current state, and future
+                        goals.
+                    </p>
+                    <ul>
+                        <!-- tech stack -->
                         <li>
-                            Install Java JDK 1.11 or higher
-                            <ul>
+                            <h5>Tech Stack</h5>
+                            <p>
+                                Crust uses Node.js, Express.js, and Pug templating.
+                                Although there is a <code>README.md</code> in the
+                                repository, we describe installation details here.
+                            </p>
+                            <ol>
                                 <li>
-                                    Windows/Mac Instructions
-                                    <ol>
-                                        <li>
-                                        You can get it from the
-                                        <a href="https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html">
-                                            Oracle Site</a>.
-
-                                        Make sure you get the 64-bit one for a 64-bit OS.
-                                        </li>
-                                        <li>
-                                            After installing, make sure Java is in your system's "PATH" environment variable.
-                                        </li>
-                                    </ol>
+                                    Install <strong>NPM</strong> with<br>
+                                    <code>$ sudo apt install npm</code>
                                 </li>
                                 <li>
-                                    Linux (Ubuntu) Instructions
-                                    <ol>
+                                    Clone the repository (if you haven't already)<br>
+                                    <code>$ git clone git@github.com:poe-iit/poe-crust.git</code>
+                                </li>
+                                <li>
+                                    Navigate into it<br>
+                                    <code>$ cd poe-crust/</code>
+                                </li>
+                                <li>
+                                    Install NPM dependencies<br>
+                                    <code>$ npm install</code>
+                                </li>
+                                <li>
+                                    <strong>To Run</strong><br>
+                                    <code>$ npm run dev</code>
+                                </li>
+                            </ol>
+                            <p>
+                                If you haven't worked with Node/Express.js, it is
+                                similar to Python/Flask and other backends where
+                                "routes" (think url endpoints like
+                                <code>/contact</code> or <code>/login</code>)
+                                are handled in respective functions. All you have
+                                to do is add whatever code logic you need, render
+                                the HTML template, and pass with it the necessary
+                                JavaScript variables (dynamic data) the page needs.
+                            </p>
+                            <p>
+                                If you have worked with HTML/CSS but not Pug, it can
+                                be a little off-putting. There are no tags ('<>')
+                                and everything is indented like in Python. However,
+                                you will soon notice CSS classes and HTML ids can
+                                be applied pretty much like normal CSS.<br>
+                                For example, if you wanted to apply the Bootstrap
+                                <code>container-fluid</code> class to your
+                                <code>&lt;main&gt;</code> tag, you would do
+                                <code>main.container-fluid</code>. Thus, you can
+                                end up with code looking like this (ignore dashes):<br>
+                                <code>
+                                    main.container-fluid<br>
+                                    ----section#testid.row<br>
+                                    --------div.col
+                                </code>
+                            </p>
+                            <p>
+                                Anyways, it is quick to pick up and you can easily
+                                reference the <a href="https://pugjs.org/api/getting-started.html">Pug documentation</a>.
+                            </p>
+                        </li>
+                        <!-- current state -->
+                        <li>
+                            <h5>Current State</h5>
+                            <p>
+                                Currently, crust has no login page though one will
+                                be needed. When you run it, you will start at the
+                                homepage with a single card asking for the IP address
+                                and Port of the server you want to connect to. In
+                                this case, that is the Mantle server we discuss
+                                below, which should ideally be running in another
+                                terminal (we will get to that later).
+                            </p>
+                            <p>
+                                Upon entering the information and clicking
+                                <strong>Connect</strong>, the page is reloaded
+                                with all the system information. For now, that
+                                is <em>only</em> the table of nodes. The Log
+                                card is hard-coded with Lorem Ipsum. The Building
+                                Layout card is just an image, and half the information
+                                in the System Information card is hard coded as well.
+                            </p>
+                            <p>
+                                You are probably starting to notice that not much
+                                is done, but the information Crust wants to show
+                                helps narrow down the development goals. For instance,
+                                The System card trys to show the webserver uptime
+                                and last time the Crust homepage was reloaded/modified.
+                                Ideally, there is an asyncronous element to this
+                                application, where every 5 seconds or so, the page
+                                is updated (maybe not reloaded, look into AJAX).
+                                This logic is JavaScript and will be entirely done
+                                in Crust. However, the webserver uptime is something
+                                the Mantle server should return. So, you will need
+                                to add logic to the Mantle webserver so that a
+                                request to some endpoint, like <code>/system_status</code>
+                                or <code>/system_uptime</code>, returns that
+                                information, which you parse and display here on
+                                Crust.
+                            </p>
+                        </li>
+                        <!-- future goals -->
+                        <li>
+                            <h5>Future Goals</h5>
+                            <ul>
+                                <li>Finish System Card</li>
+                                <li>Finish Log Card</li>
+                                <li>Fix Node card (not all information is being received/displayed)</li>
+                                <li>Interval page updates (without page reloads, using AJAX?)</li>
+                                <li>Actual connection with Mantle (keep a socket open?)</li>
+                                <li>Authentication with the above connection</li>
+                                <li>Login page</li>
+                                <li>
+                                    <strong>Node</strong> page:
+                                    <ul>
                                         <li>
-                                            At your terminal, enter “sudo apt install default-jre” in your terminal
+                                            This is where nodes are added or removed
+                                            from the network. You can conceptually
+                                            see this as how a building initially gets setup
+                                            or how a faulty node gets replaced.
+                                            This page should facilitate that, and
+                                            maybe even allow one to graphically
+                                            define the rooms of a building, and assign
+                                            nodes to those rooms (ambitious, I know).
                                         </li>
-                                        <li>
-                                            At your terminal, enter “sudo apt install default-jdk” in your terminal
-                                        </li>
-                                        <li>
-                                            Make sure java is in your path by entering
-                                            “echo $JAVA_HOME” in your terminal and verifying the output.
-                                        </li>
-                                    </ol>
+                                    </ul>
+                                </li>
+                                <li>
+                                    Advice: Since the Crust front-end only communicates
+                                    with the Mantle webserver, it does not fully care
+                                    if the actual node network itself is being modified
+                                    or not. You can hardcode expected responses into
+                                    the Mantle webserver and use that to finish development
+                                    on Crust. Then as the Mantle webserver gets developed,
+                                    those responses will be replaced with actual ones,
+                                    that properly represent the new state of the node
+                                    network. Bonus points if you add test cases for
+                                    success and failure responses, and handle them
+                                    accordingly in the JavaScript backend.
                                 </li>
                             </ul>
                         </li>
+                    </ul>
+                </section>
+
+                <section id="sw-core-mantle">
+                    <h4>Backend Web Server (Mantle)</h4>
+                    <p>
+                        This is the middle layer that forwards changes to and
+                        gets updates from the node network. Mantle is written
+                        in Java and uses the
+                        <a href="https://spring.io/projects/spring-boot">Sprint Boot framework</a>,
+                        which is well-documented and fairly straightforward. Much
+                        like the Crust route handling logic, this works the same way.
+                    </p>
+                    <p>
+                        The goal is to write a RESTful API, by adding meaningful
+                        endpoints for applications (like Crust) to call. The challenge
+                        is communicating with the underlying node network (Core).
+                        This remains to be done. We now describe how to setup Mantle,
+                        though the repository does have a <code>README.md</code>
+                        included.
+                    </p>
+                    <ul>
                         <li>
-                            Install any IDE. We use VSCode here.
-                        </li>
-                        <li>
-                            Install VSCode extensions
-                            <ul>
+                            <h5>Java Spring Server Local Setup</h5>
+                            <ol>
                                 <li>
-                                    Spring Boot Extension Pack by Pivotal
+                                    Install Java JDK 11 or higher
+                                    <ul>
+                                        <li>
+                                            Windows/Mac Instructions
+                                            <ol>
+                                                <li>
+                                                You can get it from the
+                                                <a href="https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html">
+                                                    Oracle Site</a>.
+
+                                                Make sure you get the 64-bit one for a 64-bit OS.
+                                                </li>
+                                                <li>
+                                                    After installing, make sure Java is in your system's "PATH" environment variable.
+                                                </li>
+                                            </ol>
+                                        </li>
+                                        <li>
+                                            Linux (Ubuntu) Instructions
+                                            <ol>
+                                                <li>
+                                                    At your terminal, enter “sudo apt install default-jre” in your terminal
+                                                </li>
+                                                <li>
+                                                    At your terminal, enter “sudo apt install default-jdk” in your terminal
+                                                </li>
+                                                <li>
+                                                    Make sure java is in your path by entering
+                                                    “echo $JAVA_HOME” in your terminal and verifying the output.
+                                                </li>
+                                            </ol>
+                                        </li>
+                                    </ul>
                                 </li>
                                 <li>
-                                    Java Extension Pack by Microsoft
+                                    Install any IDE. We use VSCode here.
                                 </li>
                                 <li>
-                                    Maven (should come with Java) <br>
-                                    Enter “mvn -v” in your terminal to verify it is installed.
+                                    Install VSCode extensions
+                                    <ul>
+                                        <li>
+                                            Spring Boot Extension Pack by Pivotal
+                                        </li>
+                                        <li>
+                                            Java Extension Pack by Microsoft
+                                        </li>
+                                        <li>
+                                            Maven (should come with Java) <br>
+                                            Enter “mvn -v” in your terminal to verify it is installed.
+                                        </li>
+                                    </ul>
                                 </li>
-                            </ul>
+                                <li>
+                                    Clone the server repository
+                                </li>
+                                <li>
+                                    Open the repository in your IDE
+                                </li>
+                                <li>
+                                    In VSCode, find the “Spring Boot Dashboard” on the bottom left to run the project.
+                                    Alternatively, find the “Java Projects” tab on the bottom left of the screen,
+                                    and click "Run".
+                                </li>
+                            </ol>
                         </li>
-                        <li>
-                            Clone the server repository
-                        </li>
-                        <li>
-                            Open the repository in your IDE
-                        </li>
-                        <li>
-                            In VSCode, find the “Spring Boot Dashboard” on the bottom left to run the project.
-                            Alternatively, find the “Java Projects” tab on the bottom left of the screen,
-                            and click "Run".
-                        </li>
-                    </ol>
-                    </li>
-                </ul>
+                    </ul>
+                </section>
+
+                <section id="sw-core-core">
+                    <h4>Node Network (Core)</h4>
+                    <p>
+                        This part of the project was written using Rust in Fall 2020.
+                        Rust, like many functional programming languages, is tricky
+                        to understand. If any members have experience or are willing
+                        to take on a learning endeavor, that is great. The current
+                        state of this codebase is that the nodes can have peers defined,
+                        and can broadcast messages to each other using TCP. Currently,
+                        there needs to be a way for the Mantle webserver to broadcast
+                        a message to the network, at least to one of the nodes. Once
+                        the entry node receives this message, it will forward it to its
+                        peers, who will then forward it to their peers, and so on.
+                        This could be how all the nodes are pinged in order to see which
+                        nodes are live, information that Mantle and Crust should have.
+                    </p>
+                </section>
             </section>
 
             <section id="sw-vr">
