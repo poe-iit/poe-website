@@ -47,8 +47,6 @@ h1, h2, h3, h4 {
 .main-nav .nav-item {
 	flex-direction: row;
 	align-items: baseline;
-	width: 100%;
-	height: 100%;
  text-align: center;
 }
 .main-nav .nav-link {    
