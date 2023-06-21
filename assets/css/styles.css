@@ -41,7 +41,7 @@ h1, h2, h3, h4 {
 }
 .main-nav .navbar-nav {
     display: flex;
-				flex-wrap: wrap;
+				flex-wrap: nowrap;
     justify-content: center;
 				align-items: baseline;
 }
@@ -62,6 +62,12 @@ h1, h2, h3, h4 {
 	color: var(--dark);
 }
 /*horizontal rule under navbar*/
+#navbar-line {
+    margin: 0px;
+	padding: 0px;
+	border: 1px solid;
+	color: var(--light);
+}
 
 /*footer */
 footer {
