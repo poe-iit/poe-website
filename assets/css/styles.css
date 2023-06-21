@@ -36,7 +36,7 @@ h1, h2, h3, h4 {
 	width: 60px;
 }
 .main-nav .navbar-brand span {
-    color: var(--foreground);
+    color: var(--light);
     font-weight: bold;
 }
 .main-nav .navbar-nav {
@@ -50,7 +50,7 @@ h1, h2, h3, h4 {
 }
 .main-nav .nav-link {    
 	font-family: 'Noto Sans KR', sans-serif;
-	color: var(--foreground);
+	color: var(--light);
 }
 .main-nav .nav-item:hover {
 	font-display: black;
@@ -99,6 +99,6 @@ footer {
 	}
 
 	.fontsize{ 
-			font-size: 1.33em white;
+			font-size: 1.33em;
 	}
 }
