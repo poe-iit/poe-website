@@ -74,18 +74,30 @@ footer {
 }
 
 @media screen and (min-width: 510px) {
+	.nav-item {
+		font-size: .133em;
+	}
+	
 	.fontsize{ 
 			font-size: .133em;
 	}
 }
 
 @media screen and (min-width: 768px) {
+	.nav-item {
+		font-size: .1em;
+	}
+
 	.fontsize{ 
 			font-size: 1em;
 	}
 }
 
 @media screen and (min-width: 940px) {
+	.nav-item {
+		font-size: 1.33em;
+	}
+
 	.fontsize{ 
 			font-size: 1.33em;
 	}
