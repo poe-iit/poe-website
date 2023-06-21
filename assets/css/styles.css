@@ -44,6 +44,7 @@ h1, h2, h3, h4 {
     justify-content: center;
 }
 .main-nav .nav-item {
+	font-display: white;
 	width: 100%;
 	height: 100%;
  text-align: center;
@@ -53,6 +54,7 @@ h1, h2, h3, h4 {
 	color: var(--foreground);
 }
 .main-nav .nav-item:hover {
+	font-display: black;
 	background-color: var(--light);
 }
 .main-nav .nav-link:hover {
