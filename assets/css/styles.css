@@ -37,7 +37,6 @@ h1, h2, h3, h4 {
 }
 .main-nav .navbar-brand span {
     color: var(--foreground);
-	font-size: 32px;
     font-weight: bold;
 }
 .main-nav .navbar-nav {
