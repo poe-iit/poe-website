@@ -47,7 +47,7 @@ h1, h2, h3, h4 {
 .main-nav .nav-item {
 	width: 100%;
 	height: 100%;
-    text-align: center;
+ text-align: center;
 }
 .main-nav .nav-link {    
 	font-family: 'Noto Sans KR', sans-serif;
@@ -75,7 +75,7 @@ footer {
 
 @media screen and (min-width: 510px) {
 	.nav-item {
-		font-size: .133em;
+		font-size: .75em;
 	}
 	
 	.fontsize{ 
@@ -85,7 +85,7 @@ footer {
 
 @media screen and (min-width: 768px) {
 	.nav-item {
-		font-size: .1em;
+		font-size: 1em;
 	}
 
 	.fontsize{ 
