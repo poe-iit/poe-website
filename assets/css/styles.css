@@ -41,6 +41,7 @@ h1, h2, h3, h4 {
 }
 .main-nav .navbar-nav {
     display: flex;
+				flex-wrap: wrap;
     justify-content: center;
 				align-items: baseline;
 }
