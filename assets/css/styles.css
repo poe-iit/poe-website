@@ -33,7 +33,7 @@ h1, h2, h3, h4 {
     padding: 0;
 }
 .main-nav .navbar-logo {
-	width: 60px;
+	width: 20%;
 }
 .main-nav .navbar-brand span {
     color: var(--light);
