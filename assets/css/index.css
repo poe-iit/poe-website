@@ -1,3 +1,7 @@
+.fontsize {
+  font-size: .45em;
+}
+
 .slide-show{
     height: 300px;
 	background-color: var(--accent);
@@ -151,4 +155,23 @@
 @keyframes fade {
   from {opacity: .4}
   to {opacity: 1}
+}
+
+@media screen and (min-width: 510px) {
+  .fontsize{ 
+    font-size: .133em;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .fontsize{ 
+    font-size: 1em;
+  }
+}
+
+@media screen and (min-width: 940px) {
+  .fontsize{ 
+    font-size: 1.33em;
+  }
+
 }
